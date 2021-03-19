@@ -2,34 +2,38 @@
 # source; https://wiki.python.org/moin/ProblemSets/99%20Prolog%20Problems%20Solutions
 
 # starting with 7
-# Eliminate consecutive duplicates of list elements
+# Flaten a nested list structure
 
-
-l1 = [1, 1, 1, 2, 3]
-l2 = [1, 2, 3, 3, 3]
-l3 = [1, 2, 3, 3, 4, 4, 5, 5, 6, 7, 7, 8, 9, 9, 9]
+l1 = [1, [2, 3]]
+l2 = [[1, 2], 3]
+l3 = [1, 2, [3, [4, 5, [6], 7], 8], 9]
 
 
 def main():
 
-    list_list = [l1, l2, l3]
-    for lst in list_list:
-        fresh_list = remove_dupe(lst)
-        print(fresh_list)
-
+    flat_list = []
+    nest_list = [l1, l2, l3]
+    for lst in nest_list:
+        flat_list = flatten(lst)
+        print(flat_list)
     return
 
 
-def remove_dupe(lst: list):
-    rng = len(lst) - 1
-    offset = 0
-    for i in range(rng):
-        j = i + 1 - offset
-        k = i - offset
-        if lst[k] == lst[j]:
-            lst.pop(k)
-            offset += 1
-    return lst
+def flatten(lst: list):
+    done = False
+    index = 0
+    flat_list = []
+    while not done:
+        if type(lst[index]) is list:
+            flattened = flatten(lst[index])
+            for item in flattened:
+                flat_list.append(item)
+            index += 1
+        else:
+            flat_list.append(lst[index])
+            index += 1
+        if len(lst) <= index:
+            return flat_list
 
 
 if __name__ == "__main__":
