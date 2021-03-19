@@ -1,0 +1,12 @@
+{
+    "deploy.reloaded": {
+        "targets": [{
+            "type": "local",
+            "name": "CGL",
+            "dir": "\\\\uslas0-app228\\e$\\Code\\CGL",
+            "description": "Use this one"
+        }
+    ]
+    },
+    "python.condaPath": "C:\\Users\\rhunter4\\AppData\\Local\\ESRI\\conda\\envs\\cgl\\python.exe"
+}
