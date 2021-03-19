@@ -4,16 +4,17 @@
 
 def main():
     lst = [1, 2, 3, 4, 7]
-    print(dupli(lst))
+    N = 3
+    print(dupli(lst, N))
     return
 
 
-def dupli(lst: list):
+def dupli(lst: list, N: int):
     dupe = []
 
     for i in range(len(lst)):
-        dupe.append(lst[i])
-        dupe.append(lst[i])
+        for j in range(N):
+            dupe.append(lst[i])
 
     return dupe
 

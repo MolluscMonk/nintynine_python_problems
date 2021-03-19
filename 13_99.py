@@ -23,18 +23,18 @@ def main():
         print(encode_modified(lst))
         print(decode_example(encode_example(lst)))
         print('xxx')
-        print(encode_direct(lst))
+        # print(encode_direct(lst))
         print('xxx')
 
     return
 
 
-def encode_direct(alist):
-    def aux(k, g):
-        l = len(list(g))
-        if l > 1: return [l, k]
-        else: return k
-    return [aux(key, group) for key, group in groupby(alist)]
+# def encode_direct(alist):
+#     def aux(k, g):
+#         l = len(list(g))
+#         if l > 1: return [l, k]
+#         else: return k
+#     return [aux(key, group) for key, group in groupby(alist)]
 
 
 def encode_example(alist):

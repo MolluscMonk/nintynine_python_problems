@@ -20,7 +20,7 @@ def main():
     return
 
 
-def remove_dupe(lst: list) -> list:
+def remove_dupe(lst: list):
     rng = len(lst) - 1
     offset = 0
     dupes = []
