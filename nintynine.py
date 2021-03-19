@@ -1,2 +1,0 @@
-# ninty nine problem 
-
